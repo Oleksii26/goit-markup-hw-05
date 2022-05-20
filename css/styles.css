@@ -19,6 +19,9 @@
   --color-description: rgba(33, 150, 243, 0.9);
   --modal-color: rgba(0, 0, 0, 0.2);
   --color-close: rgba(0, 0, 0, 0.1);
+  /* animation */
+  --modal-anim: 400ms linear;
+  --hover-anim: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .visually-hidden {
   position: absolute;
@@ -97,11 +100,9 @@ img {
   font-size: 14px;
   line-height: 1.14;
   color: var(--secondary-text-cl);
-
   letter-spacing: 0.02em;
   display: flex;
 }
-
 .link {
   display: flex;
   align-items: center;
@@ -130,6 +131,7 @@ img {
 .link {
   text-decoration: none;
   color: inherit;
+  transition: var(--hover-anim);
 }
 .link:hover,
 .link:focus {
@@ -209,6 +211,7 @@ img {
   background-color: var(--accent-color);
   cursor: pointer;
   letter-spacing: 0.06em;
+  transition: var(--hover-anim);
 }
 .btn:focus {
   background-color: var(--btn-hover-cl);
@@ -227,6 +230,7 @@ img {
   left: 0;
   background-color: var(--modal-color);
   z-index: 10;
+  transition: opacity var(--modal-anim), visibility var(--modal-anim);
 }
 .modal {
   background-color: var(--main-bg-cl);
@@ -426,6 +430,7 @@ img {
   border: none;
   padding: 6px 22px;
   border-radius: 4px;
+  transition: var(--hover-anim);
 }
 .btn-page-two:hover,
 .btn-page-two:focus {
@@ -461,6 +466,10 @@ img {
   margin-bottom: 30px;
   position: relative;
 }
+.img-tech {
+  position: relative;
+}
+
 .description {
   padding: 63px 24px;
   position: absolute;
@@ -473,7 +482,9 @@ img {
   top: 0;
   width: 370px;
   height: 294px;
-  overflow: auto;
+  transition: transform var(--hover-anim);
+  transform: translateY(100%);
+  opacity: 0;
 }
 .link-icon {
   text-decoration: none;
@@ -484,7 +495,10 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
+.link-icon:hover .description {
+  transform: translateY(0%);
+  opacity: 1;
+}
 .catalog-items:nth-child(3n) {
   margin-right: 0;
 }
@@ -511,6 +525,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--hover-anim);
 }
 .team-link:not(:last-child) {
   margin-right: 10px;
@@ -544,6 +559,7 @@ img {
   justify-content: center;
   border: 1px solid var(--clients-color);
   border-radius: 4px;
+  transition: var(--hover-anim);
 }
 .clients {
   fill: currentColor;
@@ -570,6 +586,7 @@ img {
   color: var(--main-bg-cl);
   text-decoration: none;
   letter-spacing: 0.03em;
+  transition: var(--hover-anim);
 }
 .list-1:hover,
 .list-1:focus {
@@ -583,6 +600,7 @@ img {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   letter-spacing: 0.03em;
+  transition: var(--hover-anim);
 }
 .footer {
   background-color: var(--accent-bg-color);
@@ -641,6 +659,7 @@ img {
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: var(--hover-anim);
 }
 .social-icon {
   fill: var(--main-bg-cl);
