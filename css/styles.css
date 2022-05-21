@@ -366,6 +366,7 @@ img {
   bottom: 0;
   font-weight: 700;
   line-height: 1.14;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--main-bg-cl);
   align-items: center;
@@ -464,19 +465,16 @@ img {
 .catalog-items {
   margin-right: 30px;
   margin-bottom: 30px;
-  /* position: relative; */
 }
 
 .description {
   padding: 63px 24px;
-  /* position: absolute; */
+
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
   background-color: var(--color-description);
   color: var(--main-bg-cl);
-  /* left: 0;
-  top: 0; */
 }
 .catalog-card-one {
   position: relative;
@@ -570,12 +568,15 @@ img {
   transition: var(--hover-anim);
 }
 .clients {
+  transition: var(--hover-anim);
   fill: currentColor;
 }
-.client-name:hover {
+.client-name:hover,
+.client-name:focus {
   border-color: var(--accent-color);
 }
-.client-name:hover .clients {
+.client-name:hover .clients,
+.client-name:focus .clients {
   fill: var(--accent-color);
 }
 
